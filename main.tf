@@ -218,7 +218,7 @@ resource "aws_network_acl" "private" {
     protocol   = "tcp"
     rule_no    = 300
     action     = "allow"
-    cidr_block = aws_vpc.this.cidr_block
+    cidr_block = "0.0.0.0/0"
     from_port  = 1024
     to_port    = 65535
   }
@@ -226,7 +226,7 @@ resource "aws_network_acl" "private" {
     protocol   = "udp"
     rule_no    = 400
     action     = "allow"
-    cidr_block = aws_vpc.this.cidr_block
+    cidr_block = "0.0.0.0/0"
     from_port  = 1024
     to_port    = 65535
   }
@@ -234,7 +234,7 @@ resource "aws_network_acl" "private" {
     protocol   = "-1"
     rule_no    = 100
     action     = "allow"
-    cidr_block = aws_vpc.this.cidr_block
+    cidr_block = "0.0.0.0/0"
     from_port  = 0
     to_port    = 0
   }
