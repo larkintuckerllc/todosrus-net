@@ -208,14 +208,6 @@ resource "aws_network_acl" "private" {
   }
   ingress {
     protocol   = "tcp"
-    rule_no    = 200
-    action     = "allow"
-    cidr_block = aws_vpc.this.cidr_block
-    from_port  = 22
-    to_port    = 22 
-  }
-  ingress {
-    protocol   = "tcp"
     rule_no    = 300
     action     = "allow"
     cidr_block = "0.0.0.0/0"
