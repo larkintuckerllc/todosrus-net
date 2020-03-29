@@ -222,6 +222,14 @@ resource "aws_network_acl" "private" {
     from_port  = 1024
     to_port    = 65535
   }
+  ingress {
+    protocol   = "tcp"
+    rule_no    = 500
+    action     = "allow"
+    cidr_block = aws_vpc.this.cidr_block
+    from_port  = 22
+    to_port    = 22
+  }
   egress {
     protocol   = "-1"
     rule_no    = 100
